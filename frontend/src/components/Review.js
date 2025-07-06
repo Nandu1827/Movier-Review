@@ -156,7 +156,7 @@ const Review = ({ movies, setMovies, isSignedIn, userEmail, userFullName }) => {
                 className={`btn ${isInWatchlist ? 'btn-danger' : 'btn-primary'}`}
                 style={{ marginLeft: '1rem' }}
               >
-                {isInWatchlist ? 'Remove from Watchlist' : 'Add to Watchlist'}
+                <i className="fas fa-bookmark" style={{ marginRight: '8px' }}></i>
               </button>
             </div>
             <p className="mb-2">

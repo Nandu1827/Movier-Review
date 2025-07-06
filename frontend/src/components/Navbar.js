@@ -121,7 +121,9 @@ const Navbar = ({ isSignedIn, userEmail, handleSignOut, isAdmin }) => {
               <Link className="nav-link" to="/browse">Browse</Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/contact">Contact</Link>
+              {!isAdmin && (
+                <Link className="nav-link" to="/contact">Contact</Link>
+              )}
             </li>
             {isSignedIn ? (
               <>
@@ -131,11 +133,6 @@ const Navbar = ({ isSignedIn, userEmail, handleSignOut, isAdmin }) => {
                 <li className="nav-item">
                   <Link className="nav-link" to="/profile">Profile</Link>
                 </li>
-                {isSignedIn && !isAdmin && (
-                  <li className="nav-item">
-                    <Link className="nav-link" to="/contact">Contact</Link>
-                  </li>
-                )}
                 {isAdmin && (
                   <li className="nav-item">
                     <Link className="nav-link" to="/admin">Admin Panel</Link>
